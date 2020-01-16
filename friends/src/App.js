@@ -2,6 +2,8 @@ import React, { useState, useEffect } from 'react';
 import { Route } from 'react-router-dom';
 import './App.scss';
 import axios from 'axios';
+import LandingPage from './components/LandingPage/LandingPage';
+import Friend from './components/Friend/Friend';
 
 function App() {
 	const [ friends, setFriends ] = useState([]);
@@ -11,7 +13,12 @@ function App() {
 			.then((res) => setFriends(res.data))
 			.catch((err) => console.log(err));
 	}, []);
-	return <div className='App'>Friends</div>;
+	return (
+		<div className='App'>
+            <Route  exact path='/' render={() => <LandingPage friends={friends} /> }/>
+            <Route exact path='/friends/:id' render={(props) => <Friend {...props} friend={friends}/>}/>
+		</div>
+	);
 }
 
 export default App;
