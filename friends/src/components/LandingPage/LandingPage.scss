@@ -1,0 +1,14 @@
+.container{
+    a{
+        width: 20%;
+        height: 300px;
+        margin: 2%;
+        border: 2px solid black;
+        text-decoration: none;
+        color: darkblue;
+    }
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    width: 95%;
+}

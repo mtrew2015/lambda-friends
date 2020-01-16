@@ -14,10 +14,10 @@ function App() {
 			.catch((err) => console.log(err));
 	}, []);
 	return (
-		<div className='App'>
+		<React.Fragment>
             <Route  exact path='/' render={() => <LandingPage friends={friends} /> }/>
-            <Route exact path='/friends/:id' render={(props) => <Friend {...props} friend={friends}/>}/>
-		</div>
+            <Route exact path='/friends/:id' render={(props) => <Friend {...props} friends={friends}/>}/>
+		</React.Fragment>
 	);
 }
 
